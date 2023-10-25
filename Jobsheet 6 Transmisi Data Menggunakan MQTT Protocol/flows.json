@@ -1,0 +1,505 @@
+[
+    {
+        "id": "a1501e5d416643b1",
+        "type": "tab",
+        "label": "Koneksi MQTT Broker",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "f82077b377f2ffb7",
+        "type": "tab",
+        "label": "Menerima Data JSON Melalui Prtokol MQTT",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "4e705d5c78506582",
+        "type": "tab",
+        "label": "Pengembangan Flow Penerimaan Data JSON melalui Protokol MQTT",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "beb3ac3a4b324ace",
+        "type": "mqtt-broker",
+        "name": "My Broker",
+        "broker": "127.0.0.1",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "2ead3f660277f2d4",
+        "type": "inject",
+        "z": "a1501e5d416643b1",
+        "name": "Temperature",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "livingroom/sensors",
+        "payload": "28",
+        "payloadType": "str",
+        "x": 130,
+        "y": 220,
+        "wires": [
+            [
+                "167196bf5b1f3ab5"
+            ]
+        ]
+    },
+    {
+        "id": "3059bf83f8a39a51",
+        "type": "debug",
+        "z": "a1501e5d416643b1",
+        "name": "Output",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 650,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "167196bf5b1f3ab5",
+        "type": "mqtt out",
+        "z": "a1501e5d416643b1",
+        "name": "Pub/Sub",
+        "topic": "livingroom/sensors",
+        "qos": "0",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "beb3ac3a4b324ace",
+        "x": 340,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "3cb1241773af8ec8",
+        "type": "mqtt in",
+        "z": "a1501e5d416643b1",
+        "name": "Broker",
+        "topic": "livingroom/sensors",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "beb3ac3a4b324ace",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 490,
+        "y": 220,
+        "wires": [
+            [
+                "3059bf83f8a39a51"
+            ]
+        ]
+    },
+    {
+        "id": "0772bb7487906187",
+        "type": "inject",
+        "z": "f82077b377f2ffb7",
+        "name": "Temperature",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "livingroom/sensors",
+        "payload": "{\"temp\":24, \"humi\":30, \"light\":10}",
+        "payloadType": "json",
+        "x": 130,
+        "y": 280,
+        "wires": [
+            [
+                "72a9dccc6db1edc7"
+            ]
+        ]
+    },
+    {
+        "id": "72a9dccc6db1edc7",
+        "type": "mqtt out",
+        "z": "f82077b377f2ffb7",
+        "name": "Pub/Sub",
+        "topic": "livingroom/sensors",
+        "qos": "0",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "beb3ac3a4b324ace",
+        "x": 280,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "d14762bae8a74b8f",
+        "type": "mqtt in",
+        "z": "f82077b377f2ffb7",
+        "name": "Broker",
+        "topic": "livingroom/sensors",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "beb3ac3a4b324ace",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 390,
+        "y": 200,
+        "wires": [
+            [
+                "cb4f6e074214fa55"
+            ]
+        ]
+    },
+    {
+        "id": "cb4f6e074214fa55",
+        "type": "json",
+        "z": "f82077b377f2ffb7",
+        "name": "JSON Parser",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 570,
+        "y": 200,
+        "wires": [
+            [
+                "0c9cfc81fd781d26"
+            ]
+        ]
+    },
+    {
+        "id": "0c9cfc81fd781d26",
+        "type": "function",
+        "z": "f82077b377f2ffb7",
+        "name": "Parser Function",
+        "func": "var val = msg.payload;\nmsg.payload = val.humi;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 760,
+        "y": 200,
+        "wires": [
+            [
+                "46b640ed88e515d4"
+            ]
+        ]
+    },
+    {
+        "id": "46b640ed88e515d4",
+        "type": "debug",
+        "z": "f82077b377f2ffb7",
+        "name": "Message",
+        "active": true,
+        "tosidebar": false,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 920,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "d5e2c2c1e53eaa5c",
+        "type": "inject",
+        "z": "4e705d5c78506582",
+        "name": "Temperature",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "livingroom/sensors",
+        "payload": "{\"temp\":24, \"humi\":30, \"light\":10}",
+        "payloadType": "json",
+        "x": 150,
+        "y": 200,
+        "wires": [
+            [
+                "acfa2a20ae318a0e"
+            ]
+        ]
+    },
+    {
+        "id": "acfa2a20ae318a0e",
+        "type": "mqtt out",
+        "z": "4e705d5c78506582",
+        "name": "Pub/Sub",
+        "topic": "livingroom/sensors",
+        "qos": "0",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "beb3ac3a4b324ace",
+        "x": 420,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "447de5baa7cb2bb0",
+        "type": "mqtt in",
+        "z": "4e705d5c78506582",
+        "name": "Broker",
+        "topic": "livingroom/sensors",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "beb3ac3a4b324ace",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 570,
+        "y": 200,
+        "wires": [
+            [
+                "b907afd7c05f109a"
+            ]
+        ]
+    },
+    {
+        "id": "b907afd7c05f109a",
+        "type": "json",
+        "z": "4e705d5c78506582",
+        "name": "JSON Parser",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 750,
+        "y": 200,
+        "wires": [
+            [
+                "5e82e7f7210e2f23"
+            ]
+        ]
+    },
+    {
+        "id": "5e82e7f7210e2f23",
+        "type": "function",
+        "z": "4e705d5c78506582",
+        "name": "Parser Function",
+        "func": "var val = msg.payload;\nmsg.payload = val.humi;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 940,
+        "y": 200,
+        "wires": [
+            [
+                "335fd57f53ef0736"
+            ]
+        ]
+    },
+    {
+        "id": "335fd57f53ef0736",
+        "type": "debug",
+        "z": "4e705d5c78506582",
+        "name": "Message",
+        "active": true,
+        "tosidebar": false,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1120,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "d98f8bd6f07fd7a2",
+        "type": "inject",
+        "z": "4e705d5c78506582",
+        "name": "Temperature",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "kitchen/sensors",
+        "payload": "{\"flame\":0, \"metane\":0, \"temp\":24, \"humi\":38}",
+        "payloadType": "json",
+        "x": 110,
+        "y": 280,
+        "wires": [
+            [
+                "36fd91f3b9185281"
+            ]
+        ]
+    },
+    {
+        "id": "36fd91f3b9185281",
+        "type": "mqtt out",
+        "z": "4e705d5c78506582",
+        "name": "Pub/Sub Kitchen",
+        "topic": "kitchen/sensors",
+        "qos": "0",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "beb3ac3a4b324ace",
+        "x": 410,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "53db58751bea6dd0",
+        "type": "mqtt in",
+        "z": "4e705d5c78506582",
+        "name": "Broker Kitchen",
+        "topic": "kitchen/sensors",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "beb3ac3a4b324ace",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 560,
+        "y": 280,
+        "wires": [
+            [
+                "0d493c8b9b26a297"
+            ]
+        ]
+    },
+    {
+        "id": "0d493c8b9b26a297",
+        "type": "json",
+        "z": "4e705d5c78506582",
+        "name": "JSON Parser",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 750,
+        "y": 280,
+        "wires": [
+            [
+                "2f5d02caf3521c75"
+            ]
+        ]
+    },
+    {
+        "id": "2f5d02caf3521c75",
+        "type": "function",
+        "z": "4e705d5c78506582",
+        "name": "Parser Function",
+        "func": "var val = msg.payload;\nmsg.payload = val.humi;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 940,
+        "y": 280,
+        "wires": [
+            [
+                "158ea930d866f295"
+            ]
+        ]
+    },
+    {
+        "id": "158ea930d866f295",
+        "type": "debug",
+        "z": "4e705d5c78506582",
+        "name": "Message Kitchen",
+        "active": true,
+        "tosidebar": false,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1150,
+        "y": 280,
+        "wires": []
+    }
+]
