@@ -19,6 +19,8 @@ Program dapat dilihat pada folder berikut ini: <a href="https://github.com/alfan
 
 **4. Hasil dan Pembahasan**
 
-Tambahkan flowchart, dan analisa program
+Tambahkan flowchart, untuk keterangan programnya bisa dilihatpada program terlampir.
 
 **4. Kesimpulan**
+
+Dari praktikum ini, kita dapat mengetahui bahwa kita bisa mengatur LED
