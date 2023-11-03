@@ -6,5 +6,5 @@
 <br>TE-3B
 <br>4.31.21.1.04</p>
 <b><p align="center">PROGRAM STUDI D4 TEKNIK TELEKOMUNIKASI</p>
-<p align="center">POLITEKNIK NEGERI SEMARANG</p>
-<p align="center">2023</></b>
+<p style="font-family:courier;" align="center">POLITEKNIK NEGERI SEMARANG</p>
+<p style="font-family:courier;" align="center">2023</p></b>
