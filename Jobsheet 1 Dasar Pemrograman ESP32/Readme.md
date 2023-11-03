@@ -1,7 +1,4 @@
-<h1> Jobsheet 1 </h1>
-<p> Jobsheet 1 merupakan jobsheet pertama yang berisi mengenai jobsheet dasar dasar penggunaan ESP32. Dalam jobsheet ini terdapat beberapa modul subjob, diantaranya <a href="https://github.com/alfan459/Embedded-System/tree/master/Jobsheet%201%20Dasar%20Pemrograman%20ESP32/a.%20GPIO">  GPIO </a>, <a href="https://github.com/alfan459/Embedded-System/tree/master/Jobsheet%201%20Dasar%20Pemrograman%20ESP32/b.%20PWM"> PWM</a>, <a href="https://github.com/alfan459/Embedded-System/tree/master/Jobsheet%201%20Dasar%20Pemrograman%20ESP32/c.%20ADC%20dan%20DAC"> ADC dan DAC</a>, dan <a href="https://github.com/alfan459/Embedded-System/tree/master/Jobsheet%201%20Dasar%20Pemrograman%20ESP32/d.%20Simulasi%20Pemrosesan%20Data%20Menggunakan%20Regresi%20Linier/Program%20Contoh">simulasi pemrosesan data menggunakan resgresi linier</a> </p>
-
-# Jobsheet 1 - Dasar Penggunaan ESP32
+# Jobsheet 1 - DASAR PEMROGRAMAN ESP32 UNTUK PEMROSESAN DATA INPUT/OUTPUT ANALOG DAN DIGITAL
 
 Jobsheet 1 merupakan jobsheet pertama yang berisi dasar-dasar penggunaan ESP32. Dalam jobsheet ini terdapat beberapa modul subjob yang mencakup berbagai aspek penting, termasuk:
 
