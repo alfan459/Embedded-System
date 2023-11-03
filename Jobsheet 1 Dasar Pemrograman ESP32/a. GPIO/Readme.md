@@ -22,6 +22,10 @@ Program dapat dilihat pada folder berikut ini: <a href="https://github.com/alfan
 
 ![GPIO 2](https://github.com/alfan459/Embedded-System/assets/54757609/741c77fd-f7b2-49c1-835a-f1b214b5d36a)
 
+Untuk flowchart, bisa dilihat pada gambar di bawah ini:
+
+![Flowchart1](https://github.com/alfan459/Embedded-System/assets/54757609/3062ca6a-98dd-441c-8fe5-7019fac6f825)
+
 Tambahkan flowchart, untuk keterangan programnya bisa dilihatpada program terlampir.
 
 **4. Kesimpulan**
@@ -54,9 +58,12 @@ Program dapat dilihat pada folder berikut ini: <a href="https://github.com/alfan
 
 ![GPIO 1](https://github.com/alfan459/Embedded-System/assets/54757609/d6d24241-0add-4543-a049-e1a800bf9378)
 
-Tambahkan flowchart, untuk keterangan programnya bisa dilihatpada program terlampir.
+Untuk Flowchart bisa dilihat pada gambar dibawah ini:
 
-**4. Kesimpulan**
+![Flowchart2](https://github.com/alfan459/Embedded-System/assets/54757609/cb312fa5-7354-4c89-bfad-a0e742dfea24)
+
+
+**5. Kesimpulan**
 
 Dari praktikum ini, kita dapat mengetahui bahwa kita bisa mengatur LED
 
