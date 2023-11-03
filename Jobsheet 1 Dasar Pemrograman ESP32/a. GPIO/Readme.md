@@ -8,5 +8,5 @@ Program pertama akan digunakan untuk membuat blink dengan interval 100ms, 1 deti
 
 **2. Program**
 
-Program dapat dilihat pada folder berikut ini:
+Program dapat dilihat pada folder berikut ini: https://github.com/alfan459/Embedded-System/tree/master/Jobsheet%201%20Dasar%20Pemrograman%20ESP32/a.%20GPIO/Blink%20100ms%2C%201%20detik%2C%202%20detik%2C%203%20detik
 
