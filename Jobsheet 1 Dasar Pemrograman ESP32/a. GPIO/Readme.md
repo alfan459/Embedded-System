@@ -20,6 +20,8 @@ Program dapat dilihat pada folder berikut ini: <a href="https://github.com/alfan
 
 **4. Hasil dan Pembahasan**
 
+![GPIO 2](https://github.com/alfan459/Embedded-System/assets/54757609/741c77fd-f7b2-49c1-835a-f1b214b5d36a)
+
 Tambahkan flowchart, untuk keterangan programnya bisa dilihatpada program terlampir.
 
 **4. Kesimpulan**
@@ -49,6 +51,8 @@ Program pertama akan digunakan untuk membuat blink 1 detik sekali menggunakan ti
 Program dapat dilihat pada folder berikut ini: <a href="https://github.com/alfan459/Embedded-System/tree/master/Jobsheet%201%20Dasar%20Pemrograman%20ESP32/a.%20GPIO/Blink%20dengan%20Millis"> Program </a>
 
 **4. Hasil dan Pembahasan**
+
+![GPIO 1](https://github.com/alfan459/Embedded-System/assets/54757609/d6d24241-0add-4543-a049-e1a800bf9378)
 
 Tambahkan flowchart, untuk keterangan programnya bisa dilihatpada program terlampir.
 
@@ -80,6 +84,8 @@ Program dapat dilihat pada folder berikut ini: <a href="https://github.com/alfan
 
 **4. Hasil dan Pembahasan**
 
+![GPIO 3](https://github.com/alfan459/Embedded-System/assets/54757609/ea07038b-8f00-4882-8bbf-3fa435e164d7)
+
 Tambahkan flowchart, untuk keterangan programnya bisa dilihatpada program terlampir.
 
 **4. Kesimpulan**
@@ -109,6 +115,8 @@ Program dapat dilihat pada folder berikut ini: <a href="https://github.com/alfan
 
 **4. Hasil dan Pembahasan**
 
+![GPIO 4](https://github.com/alfan459/Embedded-System/assets/54757609/5c06b0e8-8ff4-441a-baa4-7ff00b3c4a38)
+
 Tambahkan flowchart, untuk keterangan programnya bisa dilihatpada program terlampir.
 
 **4. Kesimpulan**
@@ -129,7 +137,7 @@ Program pertama akan digunakan untuk membuat LED menyala bergantian dari kiri ke
 
 
 **2. Rangkaian**
-![Rangkaian GPIO 4](https://github.com/alfan459/Embedded-System/assets/54757609/389106d1-e4a8-41c3-8bed-ea941e62d3db)
+![Rangkaian GPIO 5](https://github.com/alfan459/Embedded-System/assets/54757609/81dfe4c2-b0fe-4576-8de2-ab5ee3ced849)
 
 
 **3. Program**
@@ -138,8 +146,10 @@ Program dapat dilihat pada folder berikut ini: <a href="https://github.com/alfan
 
 **4. Hasil dan Pembahasan**
 
+![GPIO 5](https://github.com/alfan459/Embedded-System/assets/54757609/e9fa7683-f447-4b10-9758-9ef9b0d55a98)
+
 Tambahkan flowchart, untuk keterangan programnya bisa dilihatpada program terlampir.
 
-**4. Kesimpulan**
+**5. Kesimpulan**
 
 Dari praktikum ini, kita dapat mengetahui bahwa kita bisa mengatur LED
