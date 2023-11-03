@@ -20,7 +20,7 @@ void loop() {
 
   // Nyala 1 detik dan mati selama 1 detik
   digitalWrite(LedPin, HIGH);       // menyalakan LED
-  delay(1000);                       // akan menyala selama 1 detik
+  delay(1000);                      // akan menyala selama 1 detik
   digitalWrite(LedPin, LOW);        // mematikan LED
   delay(1000);                      // akan mati selama 1 detik
 
