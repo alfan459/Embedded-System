@@ -26,6 +26,7 @@ Tambahkan flowchart, untuk keterangan programnya bisa dilihatpada program terlam
 
 Dari praktikum ini, kita dapat mengetahui bahwa kita bisa mengatur LED
 
+<br><br></br></br>
 
 # GPIO 2
 Program pertama akan digunakan untuk membuat blink 1 detik sekali menggunakan timer milis().
@@ -45,7 +46,7 @@ Program pertama akan digunakan untuk membuat blink 1 detik sekali menggunakan ti
 
 **3. Program**
 
-Program dapat dilihat pada folder berikut ini: <a href="https://github.com/alfan459/Embedded-System/tree/master/Jobsheet%201%20Dasar%20Pemrograman%20ESP32/a.%20GPIO/Blink%20100ms%2C%201%20detik%2C%202%20detik%2C%203%20detik"> Program </a>
+Program dapat dilihat pada folder berikut ini: <a href="https://github.com/alfan459/Embedded-System/tree/master/Jobsheet%201%20Dasar%20Pemrograman%20ESP32/a.%20GPIO/Blink%20dengan%20Millis"> Program </a>
 
 **4. Hasil dan Pembahasan**
 
