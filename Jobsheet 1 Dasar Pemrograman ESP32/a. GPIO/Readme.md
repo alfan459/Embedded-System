@@ -134,7 +134,7 @@ Program pertama akan digunakan untuk membuat LED menyala bergantian dari kiri ke
 
 **3. Program**
 
-Program dapat dilihat pada folder berikut ini: <a href="https://github.com/alfan459/Embedded-System/tree/master/Jobsheet%201%20Dasar%20Pemrograman%20ESP32/a.%20GPIO/Program%20Contoh"> Program </a>
+Program dapat dilihat pada folder berikut ini: <a href="https://github.com/alfan459/Embedded-System/tree/master/Jobsheet%201%20Dasar%20Pemrograman%20ESP32/a.%20GPIO/Running%20Led"> Program </a>
 
 **4. Hasil dan Pembahasan**
 
