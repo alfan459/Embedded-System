@@ -2,32 +2,29 @@
 // Alfan, Ayum, Rani
 // Program Mengakses GPIO dan PWMn
 
-// set pin numbers
-const int buttonPin = 4;  // the number of the pushbutton pin
-const int ledPin = 5;     // the number of the LED pin
+// mengatur pin
+const int buttonPin = 4;    // pin 4 terhubung ke push button
+const int ledPin = 5;       // pin 5 terhubung ke LED
 
-// variable for storing the pushbutton status
+// menambahkan variable untuk menyimpan keadaan pushbutton
 int buttonState = 0;
 
 void setup() {
-  Serial.begin(115200);
-  // initialize the pushbutton pin as an input
-  pinMode(buttonPin, INPUT);
-  // initialize the LED pin as an output
-  pinMode(ledPin, OUTPUT);
+  Serial.begin(115200);       // komunikasi serial diatur di 115200
+  pinMode(buttonPin, INPUT);  // inisialisasi pushbutton sebagai input
+  pinMode(ledPin, OUTPUT);    // inisialisasi led sebagai output
 }
 
 void loop() {
-  // read the state of the pushbutton value
-  buttonState = digitalRead(buttonPin);
-  Serial.println(buttonState);
-  // check if the pushbutton is pressed.
-  // if it is, the buttonState is HIGH
+  buttonState = digitalRead(buttonPin);    // membaca nilai pushbutton secara digital dan menyimpannya ke variable buttonState
+  Serial.println(buttonState);             // menampilkan nilai buttonState di serial monitor
+  
+  // Jika buttonState bernilai HIGH atau pushbutton ditekan, maka akan menyalakan led
   if (buttonState == HIGH) {
-    // turn LED on
-    digitalWrite(ledPin, HIGH);
-  } else {
-    // turn LED off
-    digitalWrite(ledPin, LOW);
+    digitalWrite(ledPin, HIGH);            // menyalakan led
+  } 
+  // Jika tidak ditekan, maka matikan lampu
+  else {
+    digitalWrite(ledPin, LOW);             // mematikan led
   }
 }
