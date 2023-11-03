@@ -3,7 +3,7 @@
 // Program Running LED
 
 // mengatur posisi PIN
-const int button1 = 4;  // button1 dihubungkan pada pin GPIO4
+const int button1 = 4;    // button1 dihubungkan pada pin GPIO4
 const int button2 = 2;  // button2 dihubungkan pada pin GPIO5
 const int button3 = 15;  // button2 dihubungkan pada pin GPIO6
 const int led1 = 5;     // LED1 dihubungkan pada pin GPIO 7
