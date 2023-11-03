@@ -100,8 +100,7 @@ Program pertama akan digunakan untuk mengendalikan LED agar blink setiap 500 ms 
 
 
 **2. Rangkaian**
-
-![image](https://github.com/alfan459/Embedded-System/assets/54757609/4850f38f-859e-461b-a830-cd9b53a8e40e)
+![Rangkaian GPIO 4](https://github.com/alfan459/Embedded-System/assets/54757609/389106d1-e4a8-41c3-8bed-ea941e62d3db)
 
 
 **3. Program**
