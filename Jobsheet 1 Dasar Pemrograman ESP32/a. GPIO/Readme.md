@@ -2,13 +2,15 @@
 Program pertama akan digunakan untuk membuat blink dengan interval 100ms, 1 detik, 2 detik, dan 3 detik sekali.
 
 **1. Alat dan Bahan**
-1. ESP32
-
+1. ESP32             ==> 1 buah
+2. LED               ==> 1 buah
+3. Resistor 220 Ohm  ==> 1 buah
+4. Push button       ==> 1 buah
 
 
 **2. Rangkaian**
-
-![image](https://github.com/alfan459/Embedded-System/assets/54757609/4850f38f-859e-461b-a830-cd9b53a8e40e)
+<center>
+![image](https://github.com/alfan459/Embedded-System/assets/54757609/4850f38f-859e-461b-a830-cd9b53a8e40e)</center>
 
 
 **3. Program**
