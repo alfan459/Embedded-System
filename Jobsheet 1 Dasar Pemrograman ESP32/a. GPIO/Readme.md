@@ -105,7 +105,7 @@ Program pertama akan digunakan untuk mengendalikan LED agar blink setiap 500 ms 
 
 **3. Program**
 
-Program dapat dilihat pada folder berikut ini: <a href="https://github.com/alfan459/Embedded-System/tree/master/Jobsheet%201%20Dasar%20Pemrograman%20ESP32/a.%20GPIO/Program%20Contoh"> Program </a>
+Program dapat dilihat pada folder berikut ini: <a href="https://github.com/alfan459/Embedded-System/tree/master/Jobsheet%201%20Dasar%20Pemrograman%20ESP32/a.%20GPIO/Blink%20500ms%202%20led%202%20button"> Program </a>
 
 **4. Hasil dan Pembahasan**
 
