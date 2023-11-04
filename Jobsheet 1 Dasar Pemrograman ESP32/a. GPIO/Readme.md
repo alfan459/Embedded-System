@@ -113,22 +113,26 @@ Flowchart dapat dilihat pada gambar dibawah ini:
 
 ![Flowchart3](https://github.com/alfan459/Embedded-System/assets/54757609/e2f8bf50-de43-4b2e-b198-aa04fa0019ef)
 
+![carbon (3)](https://github.com/alfan459/Embedded-System/assets/54757609/40e5cc25-9809-485e-ab14-27efb062aca7)
 
-Program ini dimulai dengan mendefinisikan pin yang akan digunakan untuk tombol (button1 dan button2) dan LED (led1 dan led2) menggunakan konstanta `const`. Variabel `buttonState1` dan `buttonState2` digunakan untuk menyimpan keadaan (HIGH atau LOW) dari tombol 1 dan tombol 2.
 
-Dalam blok `setup()`, program melakukan inisialisasi pin menggunakan `pinMode`. `button1` dan `button2` diatur sebagai input (untuk membaca tombol), sedangkan `led1` dan `led2` diatur sebagai output (untuk mengendalikan LED).
+Program dimulai dengan inisialisasi variable input output:
+- `buttonPin` (pin 4) dan `ledPin` (pin 5) dideklarasikan sebagai konstanta untuk menentukan pin yang akan digunakan dalam program.
+- `buttonState` adalah variabel yang akan digunakan untuk menyimpan status (HIGH atau LOW) dari push button.
 
-Dalam blok `loop()`, program terus berjalan secara berulang. 
-   - Program membaca keadaan tombol 1 dengan `digitalRead(button1)` dan menyimpannya dalam variabel `buttonState1`. Keadaan tombol ini kemudian diperiksa dalam kondisi berikut:
-   - Jika tombol 1 ditekan (keadaan HIGH), maka program akan menghidupkan LED 1 dengan `digitalWrite(led1, HIGH)`.
-   - Jika tombol 1 tidak ditekan (keadaan LOW), maka program akan mematikan LED 1 dengan `digitalWrite(led1, LOW)`.
-   - Program juga membaca keadaan tombol 2 dengan `digitalRead(button2)` dan menyimpannya dalam variabel `buttonState2`. Keadaan tombol ini kemudian diperiksa dalam kondisi berikut:
-   - Jika tombol 2 ditekan (keadaan HIGH), maka program akan menghidupkan LED 2 dengan `digitalWrite(led2, HIGH)`.
-   - Jika tombol 2 tidak ditekan (keadaan LOW), maka program tidak melakukan apa-apa terhadap LED 2.
+Dalam blok `setup()`, program menginisialisasi komunikasi serial dengan `Serial.begin(115200)`, yang memungkinkan program untuk berkomunikasi dengan komputer melalui Serial Monitor dengan kecepatan 115200 baud. Selanjutnya, `pinMode()` digunakan untuk menginisialisasi `buttonPin` sebagai input (untuk membaca push button) dan `ledPin` sebagai output (untuk mengendalikan LED).
+
+Dalam blok `loop()`, program melakukan beberapa tugas berulang kali:
+   - `buttonState` diisi dengan nilai yang dibaca dari `buttonPin` menggunakan `digitalRead()`. Ini akan menghasilkan nilai HIGH jika push button ditekan, dan LOW jika tidak.
+   - `Serial.println(buttonState)` digunakan untuk mencetak nilai `buttonState` ke Serial Monitor sehingga kita dapat melihat status push button dalam Serial Monitor.
+   - Program kemudian memeriksa nilai `buttonState` dalam sebuah kondisi:
+   - Jika `buttonState` bernilai HIGH (push button ditekan), maka `digitalWrite(ledPin, HIGH)` akan dijalankan untuk menyalakan LED dengan menyetel pin `ledPin` menjadi HIGH.
+   - Jika `buttonState` bernilai LOW (push button tidak ditekan), maka `digitalWrite(ledPin, LOW)` akan dijalankan untuk mematikan LED dengan menyetel pin `ledPin` menjadi LOW.
+
 
 **5. Kesimpulan**
 
-Dengan demikian, program ini mengendalikan dua LED (led1 dan led2) dengan dua tombol (button1 dan button2). Ketika tombol 1 ditekan, LED 1 akan menyala, dan ketika tombol 2 ditekan, LED 2 akan menyala. Program akan terus berjalan dalam loop dan memeriksa keadaan tombol serta mengendalikan LED sesuai dengan input dari tombol.
+Program ini memberikan kemampuan untuk mengontrol LED dengan push button. Ketika push button ditekan, LED akan menyala; jika tidak, LED akan mati. Selain itu, status push button akan dicetak di Serial Monitor untuk pemantauan.
 
 <br></br>
 
@@ -155,11 +159,28 @@ Program dapat dilihat pada folder berikut ini: <a href="https://github.com/alfan
 
 ![GPIO 4](https://github.com/alfan459/Embedded-System/assets/54757609/5c06b0e8-8ff4-441a-baa4-7ff00b3c4a38)
 
+![carbon (2)](https://github.com/alfan459/Embedded-System/assets/54757609/b162d639-6e3e-471a-8a54-1dfb4d8ce657)
+
+
 Tambahkan flowchart, untuk keterangan programnya bisa dilihatpada program terlampir.
+
+Program ini dimulai dengan mendefinisikan pin yang akan digunakan untuk tombol (button1 dan button2) dan LED (led1 dan led2) menggunakan konstanta `const`. Variabel `buttonState1` dan `buttonState2` digunakan untuk menyimpan keadaan (HIGH atau LOW) dari tombol 1 dan tombol 2.
+
+Dalam blok `setup()`, program melakukan inisialisasi pin menggunakan `pinMode`. `button1` dan `button2` diatur sebagai input (untuk membaca tombol), sedangkan `led1` dan `led2` diatur sebagai output (untuk mengendalikan LED).
+
+Dalam blok `loop()`, program terus berjalan secara berulang. 
+   - Program membaca keadaan tombol 1 dengan `digitalRead(button1)` dan menyimpannya dalam variabel `buttonState1`. Keadaan tombol ini kemudian diperiksa dalam kondisi berikut:
+   - Jika tombol 1 ditekan (keadaan HIGH), maka program akan menghidupkan LED 1 dengan `digitalWrite(led1, HIGH)`.
+   - Jika tombol 1 tidak ditekan (keadaan LOW), maka program akan mematikan LED 1 dengan `digitalWrite(led1, LOW)`.
+   - Program juga membaca keadaan tombol 2 dengan `digitalRead(button2)` dan menyimpannya dalam variabel `buttonState2`. Keadaan tombol ini kemudian diperiksa dalam kondisi berikut:
+   - Jika tombol 2 ditekan (keadaan HIGH), maka program akan menghidupkan LED 2 dengan `digitalWrite(led2, HIGH)`.
+   - Jika tombol 2 tidak ditekan (keadaan LOW), maka program tidak melakukan apa-apa terhadap LED 2.
+
 
 **4. Kesimpulan**
 
-Dari praktikum ini, kita dapat mengetahui bahwa kita bisa mengatur LED
+Dengan demikian, program ini mengendalikan dua LED (led1 dan led2) dengan dua tombol (button1 dan button2). Ketika tombol 1 ditekan, LED 1 akan menyala, dan ketika tombol 2 ditekan, LED 2 akan menyala. Program akan terus berjalan dalam loop dan memeriksa keadaan tombol serta mengendalikan LED sesuai dengan input dari tombol.
+
 
 <br></br>
 
