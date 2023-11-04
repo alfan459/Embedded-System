@@ -28,6 +28,9 @@ Untuk flowchart, bisa dilihat pada gambar di bawah ini:
 
 Pada skema rangkaian, terdapat 1 led dan 1 pushbutton. Untuk LED sendiri diatur menjadi output terhubung dengan GPIO5. Sedangkan pushbutton terhubung dengan GPIO4 sebagai input. Untuk mengatur perangkat agar menjadi input atau output, diatur dalam function setup. Lalu pada function loop digunakan untuk program utama yang akan berjalan secara terus menerus. Dimana program utamanya digunakan untuk menyalakan LED selama 100ms, lalu mematikan LED selama 1 detik. Menyalakan LED selama 1 detik, dan mematikannya selama 1 detik, lalu menyala selama 2 detik, dan mati selama 1 detik, dan kondisi terakhir adalah menyala selama 3 detik, lalu mati selama 1 detik. Setelah itu akan mengulang program dari awal yakni menyala selama 100ms.
 
+![carbon](https://github.com/alfan459/Embedded-System/assets/54757609/97217843-b313-4168-93b0-679e96dc2050)
+
+
 **5. Kesimpulan**
 
 Dari praktikum ini, kita dapat mengetahui bahwa kita bisa mengatur LED dengan interval waktu tertentu menggunakan perintah delay().
