@@ -63,12 +63,25 @@ Program dapat dilihat pada folder berikut ini: <a href="https://github.com/alfan
 
 Untuk Flowchart bisa dilihat pada gambar dibawah ini:
 
-![Flowchart2](https://github.com/alfan459/Embedded-System/assets/54757609/cb312fa5-7354-4c89-bfad-a0e742dfea24)
+![Flowchart2](https://github.com/alfan459/Embedded-System/assets/54757609/28954bd9-7499-47e5-b546-ec70c1f35ab9)
+
+
+Program ini dibuat untuk mengendalikan LED sehingga LED akan berkedip setiap 1 detik. Program ini menggunakan metode non-blocking dengan `millis()`, yang memungkinkan Arduino untuk terus menjalankan instruksi di `loop()` tanpa harus menunggu. Beberapa variable yang digunakan adalah
+   - `ledPin`: Mendefinisikan pin yang digunakan untuk menghubungkan LED (GPIO 5).
+   - `ledState`: Variabel yang menunjukkan keadaan LED (HIGH atau LOW).
+   - `previousMillis`: Menyimpan waktu terakhir LED berubah keadaan.
+   - `interval`: Menyimpan interval waktu (dalam milidetik) untuk nge-blink LED (1000 ms atau 1 detik).
+
+Di dalam `setup()`, `ledPin` diatur sebagai OUTPUT menggunakan `pinMode()`, sehingga Arduino tahu bahwa pin tersebut digunakan untuk mengontrol LED.
+Di dalam `loop()`, pertama-tama kita mendapatkan nilai `currentMillis` menggunakan `millis()`. `currentMillis` akan menyimpan waktu saat ini sejak Arduino dihidupkan. Selanjutnya, program memeriksa apakah selisih waktu antara `currentMillis` dan `previousMillis` lebih besar atau sama dengan `interval` (1 detik). Ini berfungsi sebagai mekanisme waktu untuk mengubah keadaan LED. Jika selisih waktu sudah mencapai atau melebihi `interval`, maka `previousMillis` diperbarui dengan `currentMillis`. Kemudian, program memeriksa keadaan `ledState`. Jika `ledState` adalah LOW (mati), maka akan diubah menjadi HIGH (nyala), dan sebaliknya. Terakhir, menggunakan `digitalWrite()`, LED akan diatur sesuai dengan nilai `ledState`. Ini akan membuat LED berkedip (nyala-mati) dengan interval 1 detik.
+
+![carbon (1)](https://github.com/alfan459/Embedded-System/assets/54757609/ce34b0e2-bd7c-4c2d-b6cf-499ff547da11)
 
 
 **5. Kesimpulan**
 
-Dari praktikum ini, kita dapat mengetahui bahwa kita bisa mengatur LED
+Program ini menciptakan efek berkedip pada LED dengan menggunakan fungsi `millis()` untuk menghindari ketergantungan waktu (blocking) dan memungkinkan Arduino menjalankan tugas lainnya tanpa harus menunggu.
+
 
 <br></br>
 
@@ -96,7 +109,12 @@ Program dapat dilihat pada folder berikut ini: <a href="https://github.com/alfan
 
 ![GPIO 3](https://github.com/alfan459/Embedded-System/assets/54757609/ea07038b-8f00-4882-8bbf-3fa435e164d7)
 
-Tambahkan flowchart, untuk keterangan programnya bisa dilihatpada program terlampir.
+Flowchart dapat dilihat pada gambar dibawah ini:
+
+![Flowchart3](https://github.com/alfan459/Embedded-System/assets/54757609/e2f8bf50-de43-4b2e-b198-aa04fa0019ef)
+
+
+
 
 **4. Kesimpulan**
 
