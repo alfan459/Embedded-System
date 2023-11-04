@@ -159,27 +159,35 @@ Program dapat dilihat pada folder berikut ini: <a href="https://github.com/alfan
 
 ![GPIO 4](https://github.com/alfan459/Embedded-System/assets/54757609/5c06b0e8-8ff4-441a-baa4-7ff00b3c4a38)
 
-![carbon (2)](https://github.com/alfan459/Embedded-System/assets/54757609/b162d639-6e3e-471a-8a54-1dfb4d8ce657)
+![carbon (4)](https://github.com/alfan459/Embedded-System/assets/54757609/1bd6a672-4911-4fd1-aba6-b61ed23a02a3)
+
+![Flowchart4](https://github.com/alfan459/Embedded-System/assets/54757609/f07744f4-de61-4698-a3f8-3103998632a0)
 
 
-Tambahkan flowchart, untuk keterangan programnya bisa dilihatpada program terlampir.
+Program dimulai dengan inisialisasi variable
+- `button1` dan `button2` (pin 4 dan pin 2) adalah pin yang terhubung ke dua push button.
+- `led1` (pin 5) dan `led2` (pin 18) adalah pin yang terhubung ke dua buah LED.
+- `buttonState1` dan `buttonState2` adalah variabel yang akan digunakan untuk menyimpan status (HIGH atau LOW) dari dua push button.
+- `ledState` adalah variabel yang akan digunakan untuk mengendalikan status LED.
+- `previousMillis` digunakan untuk menyimpan waktu terakhir LED ngeblink.
+- `interval` adalah interval waktu (dalam milidetik) untuk blink LED (500 ms).
 
-Program ini dimulai dengan mendefinisikan pin yang akan digunakan untuk tombol (button1 dan button2) dan LED (led1 dan led2) menggunakan konstanta `const`. Variabel `buttonState1` dan `buttonState2` digunakan untuk menyimpan keadaan (HIGH atau LOW) dari tombol 1 dan tombol 2.
+Dalam blok `setup()`, program menginisialisasi pin-pin yang digunakan:
+   - `button1` dan `button2` diatur sebagai input (untuk membaca push button).
+   - `led1` dan `led2` diatur sebagai output (untuk mengendalikan LED).
 
-Dalam blok `setup()`, program melakukan inisialisasi pin menggunakan `pinMode`. `button1` dan `button2` diatur sebagai input (untuk membaca tombol), sedangkan `led1` dan `led2` diatur sebagai output (untuk mengendalikan LED).
-
-Dalam blok `loop()`, program terus berjalan secara berulang. 
-   - Program membaca keadaan tombol 1 dengan `digitalRead(button1)` dan menyimpannya dalam variabel `buttonState1`. Keadaan tombol ini kemudian diperiksa dalam kondisi berikut:
-   - Jika tombol 1 ditekan (keadaan HIGH), maka program akan menghidupkan LED 1 dengan `digitalWrite(led1, HIGH)`.
-   - Jika tombol 1 tidak ditekan (keadaan LOW), maka program akan mematikan LED 1 dengan `digitalWrite(led1, LOW)`.
-   - Program juga membaca keadaan tombol 2 dengan `digitalRead(button2)` dan menyimpannya dalam variabel `buttonState2`. Keadaan tombol ini kemudian diperiksa dalam kondisi berikut:
-   - Jika tombol 2 ditekan (keadaan HIGH), maka program akan menghidupkan LED 2 dengan `digitalWrite(led2, HIGH)`.
-   - Jika tombol 2 tidak ditekan (keadaan LOW), maka program tidak melakukan apa-apa terhadap LED 2.
+Dalam blok `loop()`, program melakukan beberapa tugas berulang kali:
+   - `currentMillis` diisi dengan waktu sekarang menggunakan `millis()`. Ini digunakan untuk menghitung interval waktu.
+   - Program kemudian membaca kondisi `button1` dan `button2` menggunakan `digitalRead()`. Ini akan menghasilkan nilai HIGH jika push button ditekan, dan LOW jika tidak.
+   - Selanjutnya, program melakukan dua tugas berdasarkan kondisi push button:
+   - Jika `button1` (push button pertama) ditekan, maka `digitalWrite(led1, HIGH)` akan dijalankan untuk menyalakan LED pertama.
+   - Jika tidak, maka `digitalWrite(led1, LOW)` akan dijalankan untuk mematikan LED pertama.
+   - Jika `button2` (push button kedua) ditekan, maka program akan membuat LED1 dan LED2 berkedip dengan interval 500 ms menggunakan variabel `ledState` dan `previousMillis`.
 
 
-**4. Kesimpulan**
+**5. Kesimpulan**
 
-Dengan demikian, program ini mengendalikan dua LED (led1 dan led2) dengan dua tombol (button1 dan button2). Ketika tombol 1 ditekan, LED 1 akan menyala, dan ketika tombol 2 ditekan, LED 2 akan menyala. Program akan terus berjalan dalam loop dan memeriksa keadaan tombol serta mengendalikan LED sesuai dengan input dari tombol.
+Program ini mengendalikan dua LED (led1 dan led2) dengan dua tombol (button1 dan button2). Ketika tombol 1 ditekan, LED 1 akan menyala, dan ketika tombol 2 ditekan, LED 2 akan menyala secara berkedip. Program akan terus berjalan dalam loop dan memeriksa keadaan tombol serta mengendalikan LED sesuai dengan input dari tombol.
 
 
 <br></br>
