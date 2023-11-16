@@ -1,4 +1,4 @@
-# PWM 1
+# PWM 1: Example
 Program pertama akan digunakan untuk membuat blink dengan interval 100ms, 1 detik, 2 detik, dan 3 detik sekali.
 
 **1. Alat dan Bahan**
@@ -14,11 +14,12 @@ Program pertama akan digunakan untuk membuat blink dengan interval 100ms, 1 deti
 
 **3. Program**
 
-Program dapat dilihat pada folder berikut ini: <a href="https://github.com/alfan459/Embedded-System/tree/master/Jobsheet%201%20Dasar%20Pemrograman%20ESP32/a.%20GPIO/Blink%20100ms%2C%201%20detik%2C%202%20detik%2C%203%20detik"> Program </a>
+Program dapat dilihat pada folder berikut ini: <a href="https://github.com/alfan459/Embedded-System/tree/master/Jobsheet%201%20Dasar%20Pemrograman%20ESP32/b.%20PWM/Program%20Contoh"> Program </a>
 
 **4. Hasil dan Pembahasan**
 
-![GPIO 2](https://github.com/alfan459/Embedded-System/assets/54757609/741c77fd-f7b2-49c1-835a-f1b214b5d36a)
+![PWM 1](https://github.com/alfan459/Embedded-System/assets/54757609/2e3cddb3-534b-4b23-aad6-f672326ef669)
+
 
 Untuk flowchart, bisa dilihat pada gambar di bawah ini:
 
