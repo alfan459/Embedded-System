@@ -215,8 +215,35 @@ Program dapat dilihat pada folder berikut ini: <a href="https://github.com/alfan
 
 ![GPIO 5](https://github.com/alfan459/Embedded-System/assets/54757609/e9fa7683-f447-4b10-9758-9ef9b0d55a98)
 
-Tambahkan flowchart, untuk keterangan programnya bisa dilihatpada program terlampir.
+
+![Flowchart5](https://github.com/alfan459/Embedded-System/assets/54757609/f33ec0e3-478f-4588-b53f-67eb0437223b)
+
+![carbon](https://github.com/alfan459/Embedded-System/assets/54757609/71f87147-f84f-484e-86d4-1162434eb07e)
+
+Inisialisasi PIN:
+   - `button1`, `button2`, dan `button3` diatur sebagai input, mewakili tiga push button yang digunakan.
+   - `led1`, `led2`, `led3`, `led4`, dan `led5` diatur sebagai output, mewakili lima buah LED yang dikendalikan.
+
+Variabel:
+   - `buttonState1`, `buttonState2`, dan `buttonState3` digunakan untuk menyimpan keadaan (HIGH atau LOW) dari push button.
+   - `ledState` digunakan untuk menyimpan keadaan (HIGH atau LOW) dari LED yang berkedip.
+   - `previousMillis` menyimpan waktu terakhir LED berkedip.
+   - `interval` menentukan interval waktu berkedipnya LED (dalam milidetik).
+
+Setup
+   - Menetapkan PIN sebagai input atau output sesuai kebutuhan.
+
+Loop:
+   - Membaca keadaan dari tiga push button.
+   - Jika `button1` ditekan, maka `led1` akan menyala.
+   - Jika `button2` ditekan, maka `led1` dan `led2` akan berkedip dengan interval waktu tertentu.
+   - Jika `button3` ditekan, maka kelima LED (`led3`, `led4`, dan `led5`) akan menyala secara berurutan dari kiri ke kanan dan sebaliknya.
+
+Running LED:
+   - Bagian ini dijalankan jika `button3` ditekan.
+   - LED3, LED4, dan LED5 akan menyala secara berurutan dari kiri ke kanan dan sebaliknya dengan interval waktu tertentu.
+
 
 **5. Kesimpulan**
 
-Dari praktikum ini, kita dapat mengetahui bahwa kita bisa mengatur LED
+Program ini menciptakan efek visual yang menarik dengan mengendalikan LED berdasarkan input dari push button, yang dapat digunakan dalam proyek-proyek berbasis mikrokontroler.
