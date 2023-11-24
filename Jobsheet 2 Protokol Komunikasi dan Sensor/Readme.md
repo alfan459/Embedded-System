@@ -1,12 +1,10 @@
-# Jobsheet 2 - DASAR PEMROGRAMAN ESP32 UNTUK PEMROSESAN DATA INPUT/OUTPUT ANALOG DAN DIGITAL
+# Jobsheet 2 - PROTOKOL KOMUNIKASI DAN SENSOR
 
-Jobsheet 1 merupakan jobsheet pertama yang berisi dasar-dasar penggunaan ESP32. Dalam jobsheet ini terdapat beberapa modul subjob yang mencakup berbagai aspek penting, termasuk:
+Jobsheet ini berfokus pada pemahaman dan penerapan protokol komunikasi serta penggunaan sensor pada platform ESP32. Terdapat beberapa praktikum yang akan memberikan pemahaman mendalam tentang capacitive touch menggunakan ESP32, mengakses sensor DHT, dan berinteraksi dengan sensor RFID.
 
-1. **GPIO (General Purpose Input/Output):** Memahami penggunaan pin GPIO pada ESP32 dan cara mengontrol perangkat eksternal.
-2. **PWM (Pulse Width Modulation):** Belajar tentang teknik modulasi lebar pulsa untuk mengendalikan intensitas cahaya atau kecepatan motor.
-3. **ADC (Analog-to-Digital Converter):** Mempelajari konversi sinyal analog menjadi digital dan mengambil bacaan dari sensor analog.
-4. **DAC (Digital-to-Analog Converter):** Mengubah data digital menjadi sinyal analog untuk mengendalikan perangkat analog.
-5. **Simulasi Pemrosesan Data Menggunakan Regresi Linier:** Menerapkan teknik regresi linier untuk analisis data dan prediksi.
+1. **ESP32 Capacitive Touch:** Pada praktikum ini, Anda akan mempelajari cara menggunakan fitur capacitive touch pada ESP32. Capacitive touch memungkinkan ESP32 mendeteksi sentuhan tanpa adanya kontak fisik.
+2. **Mengakses Sensor DHT:** Pada praktikum ini, fokusnya adalah pada penggunaan sensor DHT untuk membaca suhu dan kelembaban lingkungan. Sensor DHT sangat berguna dalam aplikasi berbasis IoT.
+3. **Mengakses Sensor RFID:** Praktikum ini memperkenalkan penggunaan sensor RFID (Radio-Frequency Identification) pada ESP32. Sensor ini dapat digunakan untuk mengidentifikasi objek atau kartu RFID.
 
 Setiap subjob dirancang untuk memberikan pemahaman yang kokoh tentang dasar ESP32, yang merupakan langkah awal yang penting dalam eksplorasi lebih lanjut tentang Internet of Things (IoT) dan pengembangan perangkat cerdas.
 
