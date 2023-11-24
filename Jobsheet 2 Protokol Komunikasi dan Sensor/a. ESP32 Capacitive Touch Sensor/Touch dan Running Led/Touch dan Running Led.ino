@@ -5,8 +5,8 @@
 // Mengatur pin
 const int touchPin = 4;        // Pin Touch yakni di GPIO4    
 const int led1 = 16;           // LED1 dihubungkan pada GPIO16
-const int led2 = 8;            // LED2 dihubungkan pada GPIO 8
-const int led3 = 9;            // LED3 dihubungkan pada GPIO 9
+const int led2 = 17;            // LED2 dihubungkan pada GPIO17
+const int led3 = 18;            // LED3 dihubungkan pada GPIO18
 
 const int threshold = 20;      // mengatur nilai treshold 
 int touchValue;                // variable untuk menympan nilai touch pin
