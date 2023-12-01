@@ -89,87 +89,93 @@ void loop() {
 ```
 
 **5. Kesimpulan**
-Praktikum ini
+Dalam praktikum ini kita bisa mengecek kondisi suhu dan kelembapan sekitar kita menggunakan sensor DHT11, baik dalam derajat celcius maupun farenheit.
+
 <br></br>
 
-# ESP32 TOUCH 2: Menyalakan LED Lewat Sensor Touch
-Program kedua digunakan untuk mengatur kondisi LED menyala atau tidak melalui sensor touch ESP 32.
+# ESP32 & DHT11 2: Controlling LED & Buzzer
+Program kedua digunakan untuk mengatur kondisi LED dan buzzer menyala atau tidak melalui sensor DHT11.
 
 **1. Alat dan Bahan**
 1. ESP32             ==> 1 buah
-2. LED               ==> 1 buah
+2. DHT11             ==> 1 buah
 3. Resistor 220 Ohm  ==> 1 buah
+4. Resistor 10K ohm  ==> 1 buah 
 
 
 **2. Rangkaian**
 
-![image](https://github.com/alfan459/Embedded-System/assets/54757609/1eaff866-7a60-478d-a3d5-e373569772c9)
+![Rangkaian](https://github.com/alfan459/Embedded-System/assets/54757609/404322eb-617c-4736-974d-c1ec60d3c022)
 
 
 **3. Program**
 
-Program dapat dilihat pada folder berikut ini: <a href="[https://github.com/alfan459/Embedded-System/tree/master/Jobsheet%201%20Dasar%20Pemrograman%20ESP32/b.%20PWM/Program%20Lanjutan%20PWM](https://github.com/alfan459/Embedded-System/tree/master/Jobsheet%202%20Protokol%20Komunikasi%20dan%20Sensor/a.%20ESP32%20Capacitive%20Touch%20Sensor/Touch%20Test%20dan%20Led)"> Program </a>
+Program dapat dilihat pada folder berikut ini: <a href="https://github.com/alfan459/Embedded-System/tree/master/Jobsheet%202%20Protokol%20Komunikasi%20dan%20Sensor/b.%20Mengakses%20Sensor%20DHT11/Running%20Led%20dan%20Buzzer%20dengan%20dht11"> Program </a>
 
 **4. Hasil dan Pembahasan**
 
-![touch2](https://github.com/alfan459/Embedded-System/assets/54757609/9e2e53b8-c511-4ed6-9958-ffcae10c2c71)
+https://github.com/alfan459/Embedded-System/assets/54757609/2e9c38bc-0893-4240-98a9-303b0f99527e
 
 Untuk flowchart, bisa dilihat pada gambar di bawah ini:
 
 ![Flowchart 2](https://github.com/alfan459/Embedded-System/assets/54757609/96206f0e-a708-43ae-a224-9af7bbf7c080)
 
-Program ini bertujuan untuk mengendalikan LED dengan menggunakan sensor sentuh pada pin GPIO4 pada ESP32. Berikut adalah analisis dari program:
+Program ini menggunakan sensor DHT11 untuk membaca suhu dan kelembapan, dan berdasarkan nilai suhu, akan mengendalikan LED dan buzzer. Berikut adalah analisis program:
 
-1. **Pengaturan Pin:**
-   - `touchPin` diatur ke GPIO4, yang merupakan pin sensor sentuh.
-   - `ledPin` diatur ke GPIO16, yang merupakan pin untuk mengendalikan LED.
+1. **Pendefinisian Pin dan Tipe Sensor:**
+   - LED dan buzzer dikendalikan oleh pin tertentu pada mikrokontroller.
+   - Pembacaan suhu dan kelembapan menggunakan sensor DHT11 seperti pada program sebelumnya.
 
 ```cpp
-const int touchPin = 4;
-const int ledPin = 16;
+const int led1 = 16;    // LED1 dihubungkan pada GPIO16
+const int led2 = 8;     // LED2 dihubungkan pada GPIO8
+const int led3 = 9;     // LED3 dihubungkan pada GPIO9
+const int buzzer = 10;  // Buzzer dihubungkan pada GPIO10
 ```
 
-2. **Pengaturan Treshold:**
-   - `threshold` diatur ke nilai 20. Nilai ini digunakan sebagai batas ambang untuk menentukan apakah sensor sentuh dianggap aktif atau tidak.
+2. **Setup Awal:**
+   - Komunikasi serial diatur pada baudrate 9600.
+   - Inisialisasi LED dan buzzer sebagai output.
+   - Memulai komunikasi dengan sensor DHT.
 
 ```cpp
-const int threshold = 20;
-```
-
-3. **Inisialisasi LED dan Serial Communication:**
-   - `ledPin` diinisialisasi sebagai output.
-   - Komunikasi serial diatur pada baudrate 115200.
-   - Terdapat delay awal 1000 ms untuk memastikan kestabilan ESP32.
-
-```cpp
-pinMode(ledPin, OUTPUT);
-Serial.begin(115200);
-delay(1000);
-```
-
-4. **Loop Utama:**
-   - Nilai dari sensor sentuh (`touchValue`) dibaca menggunakan fungsi `touchRead(touchPin)`.
-   - Nilai tersebut ditampilkan pada Serial Monitor.
-   - Jika nilai touch kurang dari nilai threshold, LED dinyalakan; sebaliknya, LED dimatikan.
-
-```cpp
-touchValue = touchRead(touchPin);
-Serial.print(touchValue);
-if (touchValue < threshold) {
-  digitalWrite(ledPin, HIGH);
-  Serial.println(" - LED on");
-} else {
-  digitalWrite(ledPin, LOW);
-  Serial.println(" - LED off");
+void setup() {
+  Serial.begin(9600);
+  Serial.println(F("DHT11 Embedded System Test!"));
+  dht.begin();
+  
+  pinMode (led1, OUTPUT);
+  pinMode (led2, OUTPUT);
+  pinMode (led3, OUTPUT);
 }
-delay(500);
 ```
 
-Jika sensor sentuh mendeteksi sentuhan (nilai di bawah threshold), LED akan menyala. Jika sensor sentuh tidak mendeteksi sentuhan (nilai di atas atau sama dengan threshold), LED akan mati. Hasil dapat diamati melalui Serial Monitor.
+3. **Loop Utama:**
+   - Terdapat jeda waktu 2 detik (`delay(2000)`) antara pembacaan suhu dan kelembapan.
+   - Pembacaan suhu dan kelembapan dilakukan seperti pada program sebelumnya.
+   - Jika pembacaan suhu gagal, pesan kesalahan akan ditampilkan.
+   - Berdasarkan suhu, program mengendalikan LED dan buzzer sesuai kondisi tertentu.
 
+```cpp
+void loop() {
+  delay(2000);
+  
+  // ... (pembacaan suhu dan kelembapan)
+
+  // Jika suhu berada di bawah atau sama dengan 30 derajat, maka running LED dan aktifkan buzzer
+  if (t <= 30.00) {
+    digitalWrite(led1, HIGH);
+    digitalWrite(buzzer, HIGH);
+    delay(1000);
+    digitalWrite(buzzer, LOW);
+    delay(1000);
+  } else {
+    // ... (pengaturan LED untuk kondisi suhu di atas 30 derajat)
+  }
+}
+```
 
 **5. Kesimpulan**
 
-Setelah menjalankan praktikum ini, didapat kesimpulan bahwa untuk menyalakan LED dibutuhkan nilai treshold untuk batasan dimana LED akan menyala dan LED akan mati. Karena nilai dari touchread sendiri bernilai analog
-
+Program akan membaca suhu dan kelembapan setiap 2 detik. Jika suhu di bawah atau sama dengan 30 derajat, LED akan berkedip dan buzzer akan aktif. Jika suhu di atas 30 derajat, LED akan berkedip tanpa aktivasi buzzer.
 <br></br>
