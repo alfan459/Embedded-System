@@ -1,53 +1,95 @@
-# ESP32 TOUCH 1: Example
-Program pertama akan digunakan untuk menampilkan pembacaan sensor touch ESP32.
+# ESP32 & DHT11 1: Example
+Program pertama akan digunakan untuk mencoba sensor DHT11.
 
 **1. Alat dan Bahan**
-1. ESP32             ==> 1 buah
+1. ESP32            ==> 1 buah
+2. Resistor 10K ohm ==> 1 buah
+3. DHT11            ==> 1 buah  
 
 **2. Rangkaian**
 
-![image](https://github.com/alfan459/Embedded-System/assets/54757609/f172e71d-7663-476e-b929-b32ce02d00b5)
+![image](https://github.com/alfan459/Embedded-System/assets/54757609/1fe265a4-125d-48cc-b898-fea30cf33965)
 
 
 **3. Program**
 
-Program dapat dilihat pada folder berikut ini: <a href="https://github.com/alfan459/Embedded-System/tree/master/Jobsheet%202%20Protokol%20Komunikasi%20dan%20Sensor/a.%20ESP32%20Capacitive%20Touch%20Sensor/Program%20Contoh"> Program </a>
+Program dapat dilihat pada folder berikut ini: <a href="https://github.com/alfan459/Embedded-System/tree/master/Jobsheet%202%20Protokol%20Komunikasi%20dan%20Sensor/b.%20Mengakses%20Sensor%20DHT11/Program%20Contoh"> Program </a>
 
 **4. Hasil dan Pembahasan**
 
-https://github.com/alfan459/Embedded-System/assets/54757609/caead734-0d30-4f79-be89-72f7cb674c8f
+https://github.com/alfan459/Embedded-System/assets/54757609/832715cd-2ba7-4708-9520-d3906ddc5ae0
 
 Untuk flowchart, bisa dilihat pada gambar di bawah ini:
 
 ![Flowchart 1](https://github.com/alfan459/Embedded-System/assets/54757609/94fcdd67-e4f3-4228-8b80-c2f623d2e039)
 
-Program ini adalah contoh penggunaan fitur *touch* pada ESP32. Fitur ini memungkinkan ESP32 membaca nilai dari sensor sentuh yang terhubung ke pin tertentu. Berikut analisis singkat dari program:
+Program ini menggunakan sensor DHT11 untuk membaca suhu dan kelembapan. 
 
-1. **Serial Communication Setup:**
-   - Baudrate serial diatur pada 115200 bps.
-   - Terdapat delay awal sebesar 1000 ms untuk memberikan waktu ESP32 untuk stabil.
-
-```cpp
-Serial.begin(115200);
-delay(1000);
-```
-
-2. **Loop:**
-   - Pada setiap iterasi loop, nilai dari sensor sentuh yang terhubung ke pin GPIO 4 dibaca menggunakan fungsi `touchRead(4)`.
-   - Nilai tersebut kemudian ditampilkan melalui Serial Monitor.
-   - Terdapat delay 1000 ms untuk memberikan interval waktu antar pembacaan.
+1. **Pendefinisian Pin dan Tipe Sensor:**
+   - `DHTPIN` didefinisikan sebagai pin digital (GPIO) yang terhubung ke sensor DHT.
+   - Tipe sensor DHT dipilih dengan mendefinisikan `DHTTYPE`. Untuk contoh ini, dipilih tipe DHT11, tetapi dapat diubah menjadi DHT22 atau DHT21 jika diperlukan.
+   - Menambahkan juga library DHT pada awal program.
+   - Untuk type dari DHT menggunakan DHT11
 
 ```cpp
-Serial.println(touchRead(4));
-delay(1000);
+#include "DHT.h"
+
+#define DHTPIN 4
+#define DHTTYPE DHT11
+DHT dht(DHTPIN, DHTTYPE);
 ```
 
-Praktikum berhasil dilakukan jika ESP32 mampu membaca dan menampilkan nilai sensor sentuh pada Serial Monitor. Variasi nilai yang ditampilkan mencerminkan tingkat sentuhan pada sensor. Perlu dipahami bahwa nilai yang dibaca dari sensor sentuh bersifat relatif dan dapat bervariasi tergantung pada kondisi lingkungan.
+2. **Setup Awal:**
+   - Komunikasi serial diatur pada baudrate 9600.
+   - Pesan selamat datang ditampilkan di Serial Monitor.
+   - Komunikasi dengan sensor DHT dimulai menggunakan `dht.begin()`.
+
+```cpp
+void setup() {
+  Serial.begin(9600);
+  Serial.println(F("DHT11 Embedded System Test!"));
+  dht.begin();
+}
+```
+
+3. **Loop Utama:**
+   - Terdapat jeda waktu 2 detik (`delay(2000)`) antara pembacaan suhu dan kelembapan.
+   - Pembacaan suhu dan kelembapan dilakukan menggunakan fungsi `dht.readTemperature()` dan `dht.readHumidity()`.
+   - Hasil pembacaan dicek menggunakan `isnan` untuk memastikan data yang valid.
+   - Heat index dihitung baik dalam Fahrenheit maupun Celsius menggunakan fungsi `dht.computeHeatIndex()`.
+
+```cpp
+void loop() {
+  delay(2000);
+  
+  float h = dht.readHumidity();
+  float t = dht.readTemperature();
+  float f = dht.readTemperature(true);
+
+  if (isnan(h) || isnan(t) || isnan(f)) {
+    Serial.println(F("Failed to read from DHT sensor!"));
+    return;
+  }
+
+  float hif = dht.computeHeatIndex(f, h);
+  float hic = dht.computeHeatIndex(t, h, false);
+
+  Serial.print(F("Humidity: "));
+  Serial.print(h);
+  Serial.print(F("%  Temperature: "));
+  Serial.print(t);
+  Serial.print(F("°C "));
+  Serial.print(f);
+  Serial.print(F("°F  Heat index: "));
+  Serial.print(hic);
+  Serial.print(F("°C "));
+  Serial.print(hif);
+  Serial.println(F("°F"));
+}
+```
 
 **5. Kesimpulan**
-
-Praktikum berhasil dilakukan jika ESP32 mampu membaca dan menampilkan nilai sensor sentuh pada Serial Monitor.
-
+Praktikum ini
 <br></br>
 
 # ESP32 TOUCH 2: Menyalakan LED Lewat Sensor Touch
