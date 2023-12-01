@@ -3,8 +3,8 @@
 // Program Contoh DHT11
 
 const int led1 = 16;           // LED1 dihubungkan pada GPIO16
-const int led2 = 8;            // LED2 dihubungkan pada GPIO8
-const int led3 = 9;            // LED3 dihubungkan pada GPIO9
+const int led2 = 18;            // LED2 dihubungkan pada GPIO18
+const int led3 = 19;            // LED3 dihubungkan pada GPIO19
 const int buzzer = 10;         // buzzer dihubungkan pada GPIO10
 
 // Menambahkan library DHT
