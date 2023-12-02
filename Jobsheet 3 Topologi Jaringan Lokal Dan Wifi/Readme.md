@@ -257,7 +257,68 @@ Program dapat dilihat pada folder berikut ini: <a href="https://github.com/alfan
 
 Flowchart dapat dilihat pada gambar dibawah ini:
 
+
+Program ini adalah contoh penggunaan ESP32 untuk menghubungkan ke jaringan Wi-Fi dengan menetapkan hostname untuk modul ESP32. Berikut adalah penjelasan baris program:
+
+1. **Include Library WiFi:**
+   ```cpp
+   #include <WiFi.h>
+   ```
+   Menggunakan library WiFi untuk mengakses fitur jaringan pada ESP32.
+
+2. **Pengaturan Koneksi Wi-Fi dan Hostname:**
+   ```cpp
+   const char* ssid = "Galaxy A02s3ad8";
+   const char* password = "jayu0435";
+   String hostname = "ESP32 Node Temperature";
+   ```
+   - Menyimpan nama dan kata sandi (SSID dan password) jaringan Wi-Fi yang akan dihubungi.
+   - `hostname`: Menyimpan nama host yang akan diberikan kepada ESP32.
+
+3. **Fungsi initWiFi():**
+   ```cpp
+   void initWiFi() {
+     WiFi.mode(WIFI_STA);
+     WiFi.config(INADDR_NONE, INADDR_NONE, INADDR_NONE, INADDR_NONE);
+     WiFi.setHostname(hostname.c_str());  // define hostname
+     WiFi.begin(ssid, password);
+     Serial.print("Connecting to WiFi ..");
+     while (WiFi.status() != WL_CONNECTED) {
+       Serial.print('.');
+       delay(1000);
+     }
+     Serial.println(WiFi.localIP());
+   }
+   ```
+   - Mengatur mode Wi-Fi ke mode STATION.
+   - `WiFi.config(INADDR_NONE, INADDR_NONE, INADDR_NONE, INADDR_NONE);`: Menonaktifkan konfigurasi manual IP.
+   - `WiFi.setHostname(hostname.c_str());`: Menetapkan hostname untuk ESP32.
+   - Menunggu hingga ESP32 terhubung ke jaringan Wi-Fi.
+
+4. **Setup Awal:**
+   ```cpp
+   void setup() {
+     Serial.begin(115200);
+     initWiFi();
+     Serial.print("RRSI: ");
+     Serial.println(WiFi.RSSI());
+   }
+   ```
+   Inisialisasi komunikasi serial, koneksi Wi-Fi, dan pencetakan kekuatan sinyal (RSSI) Wi-Fi saat program pertama kali dijalankan.
+
+5. **Loop Utama:**
+   ```cpp
+   void loop() {
+     // put your main code here, to run repeatedly:
+   }
+   ```
+   Bagian ini kosong karena tidak ada perintah khusus yang perlu dijalankan secara berulang dalam loop utama.
+
+
 **5. Kesimpulan**
+
+Program ini dirancang untuk menghubungkan ESP32 ke jaringan Wi-Fi menggunakan mode STATION dan menetapkan hostname sebagai "ESP32 Node Temperature". Menetapkan hostname dapat memudahkan identifikasi perangkat di jaringan. Pastikan untuk mengganti nilai `ssid` dan `password` sesuai dengan informasi jaringan Wi-Fi yang akan digunakan, dan sesuaikan `hostname` sesuai kebutuhan.
+
 
 <br></br>
 
