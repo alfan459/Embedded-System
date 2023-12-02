@@ -22,11 +22,29 @@ Program dapat dilihat pada folder berikut ini: <a href="https://github.com/alfan
 
 Untuk flowchart, bisa dilihat pada gambar di bawah ini:
 
+![Flowchart 1](https://github.com/alfan459/Embedded-System/assets/54757609/67695db9-e1aa-4be5-a2bf-8751689e73a6)
 
+
+Program tersebut bertujuan untuk melakukan pemindaian (scanning) jaringan Wi-Fi yang tersedia dan menampilkan informasi seperti nama SSID (Service Set Identifier), kekuatan sinyal (RSSI), dan jenis enkripsi dari setiap jaringan yang ditemukan. Berikut adalah analisis komponen-komponen kunci dalam program:
+
+1. **WiFi Library:** Program menggunakan WiFi library untuk melakukan operasi terkait jaringan Wi-Fi pada ESP32.
+
+2. **Setup Function:**
+   - Serial diatur pada kecepatan 115200 bps.
+   - Mode WiFi diatur sebagai WiFi Station (WIFI_STA).
+   - Dilakukan pemutusan koneksi dari AP (Access Point) jika sebelumnya telah terhubung.
+   - Menampilkan pesan "Setup done" melalui Serial Monitor.
+
+3. **Loop Function:**
+   - Memulai pemindaian jaringan Wi-Fi.
+   - Menampilkan pesan "scan start" pada awal pemindaian.
+   - Jika tidak ada jaringan yang ditemukan, menampilkan pesan "no networks found".
+   - Jika terdapat jaringan, menampilkan jumlah jaringan yang ditemukan dan informasi detail setiap jaringan.
+   - Menunggu selama 5 detik sebelum melakukan pemindaian lagi.
 
 **5. Kesimpulan**
 
-Dari praktikum ini, kita dapat mengetahui bahwa kita bisa mengatur LED dengan interval waktu tertentu menggunakan perintah delay().
+Program ini menggunakan ESP32 untuk melakukan pemindaian jaringan Wi-Fi yang tersedia di sekitarnya. Dengan menggunakan WiFi library, program dapat menampilkan informasi seperti nama SSID, kekuatan sinyal (RSSI), dan jenis enkripsi dari setiap jaringan yang terdeteksi. Selain itu, program juga dapat mendeteksi apakah tidak ada jaringan Wi-Fi yang ditemukan.
 
 <br></br>
 
