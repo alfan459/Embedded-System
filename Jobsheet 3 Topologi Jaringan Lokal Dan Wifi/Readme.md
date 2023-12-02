@@ -160,10 +160,77 @@ Program dapat dilihat pada folder berikut ini: <a href="https://github.com/alfan
 Flowchart dapat dilihat pada gambar dibawah ini:
 
 
+Program ini adalah contoh penggunaan ESP32 untuk terus mencoba menghubungkan ke jaringan Wi-Fi setiap 30 detik sekali jika koneksi terputus. Berikut adalah penjelasan baris program:
+
+1. **Include Library WiFi:**
+   ```cpp
+   #include <WiFi.h>
+   ```
+   Menggunakan library WiFi untuk mengakses fitur jaringan pada ESP32.
+
+2. **Pengaturan Koneksi Wi-Fi:**
+   ```cpp
+   const char* ssid = "Galaxy A02s3ad8";
+   const char* password = "jayu0435";
+   ```
+   Menyimpan nama dan kata sandi (SSID dan password) jaringan Wi-Fi yang akan dihubungi.
+
+3. **Variabel Waktu dan Inisialisasi WiFi:**
+   ```cpp
+   unsigned long previousMillis = 0;
+   unsigned long interval = 30000;
+   ```
+   - `previousMillis`: Menyimpan waktu terakhir saat mencoba terhubung ke Wi-Fi.
+   - `interval`: Interval waktu (30 detik) untuk mencoba kembali terhubung ke Wi-Fi.
+
+4. **Fungsi initWiFi():**
+   ```cpp
+   void initWiFi() {
+     WiFi.mode(WIFI_STA);
+     WiFi.begin(ssid, password);
+     Serial.print("Connecting to WiFi ..");
+     while (WiFi.status() != WL_CONNECTED) {
+       Serial.print('.');
+       delay(1000);
+     }
+     Serial.println(WiFi.localIP());
+   }
+   ```
+   Fungsi ini mirip dengan program sebelumnya. Digunakan untuk mengatur dan menunggu hingga koneksi Wi-Fi terbentuk. Program ini mencoba terhubung setiap kali dijalankan.
+
+5. **Setup Awal:**
+   ```cpp
+   void setup() {
+     Serial.begin(115200);
+     initWiFi();
+     Serial.print("RRSI: ");
+     Serial.println(WiFi.RSSI());
+   }
+   ```
+   Inisialisasi komunikasi serial dan koneksi Wi-Fi saat program pertama kali dijalankan.
+
+6. **Loop Utama:**
+   ```cpp
+   void loop() {
+     unsigned long currentMillis = millis();
+     // if WiFi is down, try reconnecting every CHECK_WIFI_TIME seconds
+     if ((WiFi.status() != WL_CONNECTED) && (currentMillis - previousMillis >= interval)) {
+       Serial.print(millis());
+       Serial.println("Reconnecting to WiFi...");
+       WiFi.disconnect();
+       WiFi.reconnect();
+       previousMillis = currentMillis;
+     }
+   }
+   ```
+   - `currentMillis`: Menyimpan waktu saat ini menggunakan fungsi `millis()` untuk menghitung interval.
+   - Program mengecek apakah koneksi Wi-Fi terputus (`WiFi.status() != WL_CONNECTED`) dan jika sudah mencapai interval waktu (`currentMillis - previousMillis >= interval`).
+   - Jika kondisi terpenuhi, program mencetak waktu saat itu dan mencoba me-reset dan menghubungkan ulang ke Wi-Fi dengan menggunakan `WiFi.disconnect()` dan `WiFi.reconnect()`.
+
 
 **5. Kesimpulan**
 
-
+Program ini dirancang untuk terus mencoba menghubungkan ESP32 ke jaringan Wi-Fi setiap 30 detik sekali jika koneksi terputus. Ini dapat berguna dalam situasi di mana koneksi Wi-Fi mungkin tidak stabil. Pastikan untuk mengganti nilai `ssid` dan `password` sesuai dengan informasi jaringan Wi-Fi yang akan digunakan.
 <br></br>
 
 # D. Mengganti Hostname ESP32
