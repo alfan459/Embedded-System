@@ -21,7 +21,7 @@ https://github.com/alfan459/Embedded-System/assets/54757609/832715cd-2ba7-4708-9
 
 Untuk flowchart, bisa dilihat pada gambar di bawah ini:
 
-![Flowchart 1](https://github.com/alfan459/Embedded-System/assets/54757609/94fcdd67-e4f3-4228-8b80-c2f623d2e039)
+![Flowchart 1](https://github.com/alfan459/Embedded-System/assets/54757609/d7b54174-694b-43ee-a919-b75cbd598c0f)
 
 Program ini menggunakan sensor DHT11 untuk membaca suhu dan kelembapan. 
 
@@ -118,7 +118,7 @@ https://github.com/alfan459/Embedded-System/assets/54757609/2e9c38bc-0893-4240-9
 
 Untuk flowchart, bisa dilihat pada gambar di bawah ini:
 
-![Flowchart 2](https://github.com/alfan459/Embedded-System/assets/54757609/96206f0e-a708-43ae-a224-9af7bbf7c080)
+![Flowchart 2](https://github.com/alfan459/Embedded-System/assets/54757609/52f6d721-8505-4c49-b68a-bbe060b83016)
 
 Program ini menggunakan sensor DHT11 untuk membaca suhu dan kelembapan, dan berdasarkan nilai suhu, akan mengendalikan LED dan buzzer. Berikut adalah analisis program:
 
