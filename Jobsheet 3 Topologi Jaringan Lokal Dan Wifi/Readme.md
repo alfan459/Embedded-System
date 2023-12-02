@@ -134,3 +134,42 @@ Program dapat dilihat pada folder berikut ini: <a href="https://github.com/alfan
 
 
 **5. Kesimpulan**
+<br><br>
+
+# F. Pertanyaan dan Tugas
+Buatlah program pada ESP32 dengan urutan proses seperti berikut ini, 
+agar ESP32 bisa melakukan setting SSID dan Passsword lebih fleksibel. 
+a. Ketika pertama kali booting, mode ESP32 adalah Station Mode 
+untuk membaca kombinasi SSID dan Password pada jaringan 
+sebelumnya.  
+b. Jika gagal, ESP32 akan berubah mode manjadi Access Point Mode 
+dan membuat jaringan Wi-Fi tanpa proteksi/tanpa password, agar 
+user dapat terhubung dengan ESP32. 
+c. Setelah itu, hubungkan laptop dengan ESP32 dan akses IP Address 
+ESP32 (ESP32 Web Server) pada browser laptop untuk membua 
+konfigurasi SSID dan Password dan menyimpannya pada 
+EEPROM. 
+d. Kemudian matikan ESP32. ESP32 akan berusaha terhubung 
+dengan jaringan yang telah dikonfigurasi sebelumnya. 
+e. Jika berhasil terhubung, pada serial monitor akan terdapat pesan 
+Connected to “SSID” Successfully. 
+f. 
+Jika gagal terhubung, ESP32 akan masuk pada mode Access Point 
+kembali untuk melakukan konfigurasi SSID dan Password. 
+
+
+**1. Program**
+
+Program dapat dilihat pada folder berikut ini: <a href="https://github.com/alfan459/Embedded-System/tree/master/Jobsheet%203%20Topologi%20Jaringan%20Lokal%20Dan%20Wifi/Pertanyaan%20dan%20Tugas/Tugas"> Program </a>
+
+**4. Hasil dan Pembahasan**
+
+
+Untuk flowchart, bisa dilihat pada gambar di bawah ini:
+
+
+
+**5. Kesimpulan**
+
+
+<br></br>
