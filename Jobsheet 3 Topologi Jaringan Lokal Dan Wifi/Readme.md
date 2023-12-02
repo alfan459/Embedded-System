@@ -446,7 +446,7 @@ kembali untuk melakukan konfigurasi SSID dan Password.
 
 Program dapat dilihat pada folder berikut ini: <a href="https://github.com/alfan459/Embedded-System/tree/master/Jobsheet%203%20Topologi%20Jaringan%20Lokal%20Dan%20Wifi/Pertanyaan%20dan%20Tugas/Tugas"> Program </a>
 
-**4. Hasil dan Pembahasan**
+**2. Hasil dan Pembahasan**
 
 ![Tugas](https://github.com/alfan459/Embedded-System/assets/54757609/3005a905-352d-4326-9626-fdcc1421098a)
 
@@ -457,9 +457,85 @@ Program dapat dilihat pada folder berikut ini: <a href="https://github.com/alfan
 
 Untuk flowchart, bisa dilihat pada gambar di bawah ini:
 
+Program ini dirancang untuk memungkinkan ESP32 melakukan konfigurasi WiFi baik dalam mode terhubung ke jaringan WiFi yang telah dikonfigurasi sebelumnya maupun dalam mode Access Point (AP) untuk konfigurasi ulang. Berikut adalah analisis programnya:
+
+1. **Include Library:**
+   ```cpp
+   #include <WiFi.h>
+   #include <EEPROM.h>
+   #include <ESPAsyncWebServer.h>
+   ```
+   - Menggunakan library WiFi untuk mengelola koneksi WiFi.
+   - Menggunakan library EEPROM untuk menyimpan dan membaca data dari EEPROM.
+   - Menggunakan library ESPAsyncWebServer untuk membuat server web asinkron.
+
+2. **Deklarasi Variabel:**
+   ```cpp
+   const char *apSSID = "ESP32_AP";
+   const char *apPassword = "";
+
+   char ssid[32];
+   char password[64];
+   ```
+   - Menyimpan nama dan kata sandi AP (Access Point) yang digunakan ketika ESP32 berada dalam mode konfigurasi.
+   - Menyimpan SSID dan kata sandi WiFi yang akan dihubungkan oleh ESP32.
+
+3. **Inisialisasi Server Web:**
+   ```cpp
+   AsyncWebServer server(80);
+   ```
+   - Membuat objek server web asinkron pada port 80.
+
+4. **Setup Awal:**
+   ```cpp
+   void setup() { /* ... */ }
+   ```
+   - Inisialisasi komunikasi serial dan EEPROM.
+   - Membaca SSID dan kata sandi dari EEPROM.
+   - Mencoba terhubung ke jaringan WiFi yang telah dikonfigurasi sebelumnya.
+   - Jika gagal, ESP32 berubah menjadi mode Access Point dan membuka konfigurasi melalui server web.
+
+5. **Loop Utama:**
+   ```cpp
+   void loop() { /* ... */ }
+   ```
+   - Jika tidak terhubung ke jaringan WiFi, ESP32 akan mencoba terhubung kembali.
+   - Jika gagal, ESP32 masuk ke mode Access Point untuk konfigurasi ulang.
+
+6. **Fungsi Read dan Write EEPROM:**
+   ```cpp
+   void readSSIDAndPassword() { /* ... */ }
+   void writeSSIDAndPassword() { /* ... */ }
+   ```
+   - Membaca dan menulis SSID dan kata sandi ke EEPROM.
+
+7. **Fungsi Connect to WiFi:**
+   ```cpp
+   bool connectToWiFi() { /* ... */ }
+   ```
+   - Mencoba terhubung ke jaringan WiFi yang telah dikonfigurasi sebelumnya.
+   - Mengembalikan status koneksi.
+
+8. **Fungsi Create Access Point:**
+   ```cpp
+   void createAccessPoint() { /* ... */ }
+   ```
+   - Mengubah ESP32 menjadi mode Access Point.
+   - Menyediakan nama SSID dan kata sandi AP.
+   - Menampilkan alamat IP AP melalui serial.
+
+9. **Fungsi Setup Web Server:**
+   ```cpp
+   void setupWebServer() { /* ... */ }
+   ```
+   - Menyiapkan route untuk halaman konfigurasi web.
+   - Meng-handle HTTP GET untuk menampilkan halaman konfigurasi.
+   - Meng-handle HTTP POST untuk menyimpan konfigurasi yang baru.
 
 
-**5. Kesimpulan**
+**3. Kesimpulan**
+
+Program ini memungkinkan ESP32 melakukan konfigurasi WiFi dengan cara yang lebih fleksibel, baik dengan terhubung ke jaringan WiFi yang telah dikonfigurasi sebelumnya maupun melalui mode Access Point untuk konfigurasi ulang. Konfigurasi dilakukan melalui antarmuka web yang sederhana dan dapat diakses dari perangkat lain dalam jaringan yang sama.
 
 
 <br></br>
