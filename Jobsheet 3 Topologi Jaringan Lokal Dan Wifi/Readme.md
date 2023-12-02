@@ -348,9 +348,76 @@ Program dapat dilihat pada folder berikut ini: <a href="https://github.com/alfan
 
 ![3 5 Mengirim data ke database](https://github.com/alfan459/Embedded-System/assets/54757609/57b621c1-be10-45f0-8cc1-d50d4afadd6e)
 
+Untuk flowchartnya bisa dilihat pada gambar di bawah ini:
 
+
+Program ini adalah contoh implementasi ESP32 sebagai server web yang memberikan data suhu dan kelembapan dari sensor DHT11. Berikut adalah analisis singkat programnya:
+
+1. **Include Library:**
+   ```cpp
+   #include "WiFi.h"
+   #include "ESPAsyncWebServer.h"
+   #include <Adafruit_Sensor.h>
+   #include <DHT.h>
+   ```
+   - Menggunakan library WiFi dan ESPAsyncWebServer untuk menangani koneksi Wi-Fi dan pembuatan server web secara asynchronous.
+   - Menggunakan library Adafruit_Sensor dan DHT untuk membaca data dari sensor DHT.
+
+2. **Pengaturan Koneksi Wi-Fi dan Sensor DHT:**
+   ```cpp
+   const char* ssid = "Galaxy A02s3ad8";
+   const char* password = "jayu0435";
+   #define DHTPIN 4
+   #define DHTTYPE DHT11
+   DHT dht(DHTPIN, DHTTYPE);
+   ```
+   - Menyimpan nama dan kata sandi jaringan Wi-Fi.
+   - Menetapkan pin digital yang terhubung ke sensor DHT dan tipe sensornya.
+
+3. **Inisialisasi Server Web:**
+   ```cpp
+   AsyncWebServer server(80);
+   ```
+   Membuat objek server web asinkron pada port 80.
+
+4. **Fungsi Baca Suhu dan Kelembapan dari Sensor DHT:**
+   ```cpp
+   String readDHTTemperature() { /* ... */ }
+   String readDHTHumidity() { /* ... */ }
+   ```
+   - Membaca suhu dan kelembapan dari sensor DHT.
+   - Mengembalikan nilai "--" jika pembacaan gagal.
+
+5. **HTML untuk Halaman Web:**
+   ```cpp
+   const char index_html[] PROGMEM = R"rawliteral( /* ... */ )rawliteral";
+   ```
+   HTML yang akan dikirimkan sebagai respons dari server. Terdapat placeholder `%TEMPERATURE%` dan `%HUMIDITY%` yang akan digantikan dengan nilai aktual.
+
+6. **Fungsi Processor untuk Menggantikan Nilai Placeholder:**
+   ```cpp
+   String processor(const String& var) { /* ... */ }
+   ```
+   - Menggantikan placeholder dengan nilai aktual dari sensor DHT.
+
+7. **Setup Awal:**
+   ```cpp
+   void setup() { /* ... */ }
+   ```
+   - Mengatur komunikasi serial dan inisialisasi sensor DHT.
+   - Membuat koneksi ke jaringan Wi-Fi dan menunggu hingga terhubung.
+   - Menyiapkan route untuk halaman web dan endpoint suhu/kelembapan.
+   - Memulai server web.
+
+8. **Loop Utama:**
+   ```cpp
+   void loop() { /* ... */ }
+   ```
+   Loop utama kosong karena semua operasi dilakukan secara asinkron di server web.
 
 **5. Kesimpulan**
+
+Program ini menggunakan ESP32 sebagai server web yang menyajikan data suhu dan kelembapan dari sensor DHT11. Data dapat diakses melalui halaman web atau melalui endpoint `/temperature` dan `/humidity` secara terpisah. Program ini juga memanfaatkan teknologi asinkron pada server web untuk meningkatkan efisiensi dan responsivitas.
 <br><br>
 
 # F. Pertanyaan dan Tugas
@@ -382,7 +449,9 @@ Program dapat dilihat pada folder berikut ini: <a href="https://github.com/alfan
 **4. Hasil dan Pembahasan**
 
 ![Tugas](https://github.com/alfan459/Embedded-System/assets/54757609/3005a905-352d-4326-9626-fdcc1421098a)
+
 ![Tugas1](https://github.com/alfan459/Embedded-System/assets/54757609/ed684a08-8ab5-4931-a984-dd13d2499855)
+
 ![Tugas2](https://github.com/alfan459/Embedded-System/assets/54757609/79b7c13d-aad8-405d-bc00-063d8a4a19ec)
 
 
