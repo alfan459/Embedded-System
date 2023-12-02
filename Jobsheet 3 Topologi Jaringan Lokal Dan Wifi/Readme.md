@@ -73,9 +73,64 @@ Program dapat dilihat pada folder berikut ini: <a href="https://github.com/alfan
 Untuk Flowchart bisa dilihat pada gambar dibawah ini:
 
 
+Program ini menggunakan modul WiFi pada ESP32 untuk terhubung ke jaringan Wi-Fi dengan mode STATION. Berikut adalah penjelasan baris program:
 
+1. **Include Library WiFi:**
+   ```cpp
+   #include <WiFi.h>
+   ```
+   Menggunakan library WiFi untuk mengakses fitur jaringan pada ESP32.
+
+2. **Pengaturan Koneksi Wi-Fi:**
+   ```cpp
+   const char* ssid = "Galaxy A02s3ad8";
+   const char* password = "jayu0435";
+   ```
+   Menyimpan nama dan kata sandi (SSID dan password) jaringan Wi-Fi yang akan dihubungi.
+
+3. **Fungsi initWiFi():**
+   ```cpp
+   void initWiFi() {
+     WiFi.mode(WIFI_STA);
+     WiFi.begin(ssid, password);
+     Serial.print("Connecting to WiFi ..");
+     while (WiFi.status() != WL_CONNECTED) {
+       Serial.print('.');
+       delay(1000);
+     }
+     Serial.println(WiFi.localIP());
+   }
+   ```
+   - `WiFi.mode(WIFI_STA);`: Mengatur mode Wi-Fi sebagai STATION (modus klien).
+   - `WiFi.begin(ssid, password);`: Memulai koneksi ke jaringan Wi-Fi dengan menggunakan SSID dan password yang telah ditentukan.
+   - `while (WiFi.status() != WL_CONNECTED) { ... }`: Menunggu hingga koneksi Wi-Fi terhubung.
+   - `Serial.println(WiFi.localIP());`: Menampilkan alamat IP lokal setelah terhubung.
+
+4. **Setup Awal:**
+   ```cpp
+   void setup() {
+     Serial.begin(115200);
+     initWiFi();
+     Serial.print("RRSI: ");
+     Serial.println(WiFi.RSSI());
+   }
+   ```
+   - `Serial.begin(115200);`: Memulai komunikasi serial dengan baud rate 115200.
+   - Memanggil fungsi `initWiFi()` untuk mengatur koneksi Wi-Fi.
+   - Menampilkan kekuatan sinyal Wi-Fi (RSSI) menggunakan `WiFi.RSSI()`.
+
+5. **Loop Utama:**
+   ```cpp
+   void loop() {
+     // put your main code here, to run repeatedly:
+   }
+   ```
+   Loop utama yang dapat diisi dengan kode program utama.
 
 **5. Kesimpulan**
+
+Program ini bertujuan untuk menghubungkan ESP32 ke jaringan Wi-Fi dengan menggunakan mode STATION dan menampilkan kekuatan sinyal (RSSI). Fungsi `initWiFi()` digunakan untuk mengatur dan menunggu hingga koneksi Wi-Fi terbentuk. Program kemudian menampilkan alamat IP lokal dan kekuatan sinyal melalui komunikasi serial. Pastikan untuk mengganti nilai `ssid` dan `password` sesuai dengan informasi jaringan Wi-Fi yang akan digunakan.
+
 
 
 <br></br>
