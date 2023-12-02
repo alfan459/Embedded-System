@@ -18,6 +18,7 @@ Program dapat dilihat pada folder berikut ini: <a href="https://github.com/alfan
 
 **4. Hasil dan Pembahasan**
 
+![3 1 scan wifi](https://github.com/alfan459/Embedded-System/assets/54757609/2f8f3c2f-2f9c-4ef6-b88b-0df2446084ab)
 
 Untuk flowchart, bisa dilihat pada gambar di bawah ini:
 
@@ -47,6 +48,8 @@ Program dapat dilihat pada folder berikut ini: <a href="https://github.com/alfan
 "> Program </a>
 
 **4. Hasil dan Pembahasan**
+
+![3 2 Connect Wifi](https://github.com/alfan459/Embedded-System/assets/54757609/e47e911e-d9c3-44e6-a9bf-6039f1d962d6)
 
 
 Untuk Flowchart bisa dilihat pada gambar dibawah ini:
@@ -78,6 +81,8 @@ Program dapat dilihat pada folder berikut ini: <a href="https://github.com/alfan
 
 **4. Hasil dan Pembahasan**
 
+![3 3 Reconnecting](https://github.com/alfan459/Embedded-System/assets/54757609/24fb382a-b163-4c01-a1d6-fb01cb9fb8ae)
+
 
 Flowchart dapat dilihat pada gambar dibawah ini:
 
@@ -105,6 +110,11 @@ Program dapat dilihat pada folder berikut ini: <a href="https://github.com/alfan
 
 **4. Hasil dan Pembahasan**
 
+![3 4a Mengganti Hostanem](https://github.com/alfan459/Embedded-System/assets/54757609/3064b798-8636-418f-a469-496a591792f3)
+
+![3 4b Mengganti hostname](https://github.com/alfan459/Embedded-System/assets/54757609/46be21c5-86d0-4fac-a0f3-c9984830f65c)
+
+
 Flowchart dapat dilihat pada gambar dibawah ini:
 
 **5. Kesimpulan**
@@ -130,6 +140,12 @@ Praktikum terakhir membahas pengiriman data sensor dari ESP32 ke database melalu
 Program dapat dilihat pada folder berikut ini: <a href="https://github.com/alfan459/Embedded-System/tree/master/Jobsheet%203%20Topologi%20Jaringan%20Lokal%20Dan%20Wifi/e.%20Mengirim%20Data%20Sensor%20ke%20Database/Mengirim%20Data"> Program </a>
 
 **4. Hasil dan Pembahasan**
+
+![3 5 Hasil Browser](https://github.com/alfan459/Embedded-System/assets/54757609/90efb765-51f1-4752-82f1-b97620117bca)
+
+![3 5 Hasil serial monitor](https://github.com/alfan459/Embedded-System/assets/54757609/22c1a25f-5f92-4727-8a61-39f54b67b6ca)
+
+![3 5 Mengirim data ke database](https://github.com/alfan459/Embedded-System/assets/54757609/57b621c1-be10-45f0-8cc1-d50d4afadd6e)
 
 
 
@@ -163,6 +179,10 @@ kembali untuk melakukan konfigurasi SSID dan Password.
 Program dapat dilihat pada folder berikut ini: <a href="https://github.com/alfan459/Embedded-System/tree/master/Jobsheet%203%20Topologi%20Jaringan%20Lokal%20Dan%20Wifi/Pertanyaan%20dan%20Tugas/Tugas"> Program </a>
 
 **4. Hasil dan Pembahasan**
+
+![Tugas](https://github.com/alfan459/Embedded-System/assets/54757609/3005a905-352d-4326-9626-fdcc1421098a)
+![Tugas1](https://github.com/alfan459/Embedded-System/assets/54757609/ed684a08-8ab5-4931-a984-dd13d2499855)
+![Tugas2](https://github.com/alfan459/Embedded-System/assets/54757609/79b7c13d-aad8-405d-bc00-063d8a4a19ec)
 
 
 Untuk flowchart, bisa dilihat pada gambar di bawah ini:
