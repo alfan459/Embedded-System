@@ -72,6 +72,8 @@ Program dapat dilihat pada folder berikut ini: <a href="https://github.com/alfan
 
 Untuk Flowchart bisa dilihat pada gambar dibawah ini:
 
+![Flowchart 2](https://github.com/alfan459/Embedded-System/assets/54757609/cee2983e-94bf-438e-b30f-9a25812181f9)
+
 
 Program ini menggunakan modul WiFi pada ESP32 untuk terhubung ke jaringan Wi-Fi dengan mode STATION. Berikut adalah penjelasan baris program:
 
@@ -156,8 +158,9 @@ Program dapat dilihat pada folder berikut ini: <a href="https://github.com/alfan
 
 ![3 3 Reconnecting](https://github.com/alfan459/Embedded-System/assets/54757609/24fb382a-b163-4c01-a1d6-fb01cb9fb8ae)
 
-
 Flowchart dapat dilihat pada gambar dibawah ini:
+
+![Flowchart 3](https://github.com/alfan459/Embedded-System/assets/54757609/74a44b6a-173e-47b3-a3af-4bd3a810d50f)
 
 
 Program ini adalah contoh penggunaan ESP32 untuk terus mencoba menghubungkan ke jaringan Wi-Fi setiap 30 detik sekali jika koneksi terputus. Berikut adalah penjelasan baris program:
@@ -256,6 +259,8 @@ Program dapat dilihat pada folder berikut ini: <a href="https://github.com/alfan
 
 
 Flowchart dapat dilihat pada gambar dibawah ini:
+
+![Flowchart 4](https://github.com/alfan459/Embedded-System/assets/54757609/1dbd9fcc-6d12-408c-91d4-81bfbc04a9b5)
 
 
 Program ini adalah contoh penggunaan ESP32 untuk menghubungkan ke jaringan Wi-Fi dengan menetapkan hostname untuk modul ESP32. Berikut adalah penjelasan baris program:
